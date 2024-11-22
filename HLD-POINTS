@@ -1,0 +1,27 @@
+1) How does application metrics visualized in graffana?
+
+Example Architecture
+Node Exporter:
+      - Reports EC2-level metrics.
+Collect Application-Specific Metrics:
+      - Prometheus client libraries (like Java's micrometer or Python's prometheus_client) to expose custom application metrics.
+      - If the applications are containerized, install cAdvisor to monitor resource usage (CPU, memory, disk) per container.
+Prometheus: 
+      - it connects to different targets and scrapes at regular intervals ( pull based )
+      - Scrapes and stores metrics in tsdb ( time series database ) . 
+Grafana: 
+      - add promethues as a datasource 
+      - Visualizes metrics with dashboards and alerts. ( uses pmql query language to query data/metrics collected by promethues )
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+2) different kinds of perfomance testings
+
+load test :  Measures the system's behavior under expected or normal load conditions.
+Stress test : Determines the system's breaking point by testing it under extreme conditions
+Spike test : Tests how the system handles a sudden, significant increase in load.
+Endurance test : Evaluates system performance over an extended period under a steady load.
+volume test : Tests the system's performance with a large volume of data.
+Scalability Testing : Assesses the system's ability to scale up or down to handle increased or reduced loads.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
